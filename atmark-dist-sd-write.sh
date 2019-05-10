@@ -2,7 +2,7 @@
 # IMG_DIR="/opt/armadillo-work/atmark-dist-20180330/images"
 SD_DEV=/dev/$1
 
-if [ ! -d ${SD_DEV} ]; then
+if [ ! -f ${SD_DEV} ]; then
     echo "Error: can't found sd card device."
     exit
 fi
