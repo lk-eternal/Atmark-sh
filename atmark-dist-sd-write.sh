@@ -1,3 +1,4 @@
+# parameter eg: sdd
 # IMG_DIR="/opt/armadillo-work/atmark-dist-20180330/images"
 SD_DEV=/dev/$1
 
