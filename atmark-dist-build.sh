@@ -3,7 +3,7 @@ DIST_VER="20180330"
 DIST_SRC=${WORK_DIR}/atmark-dist-${DIST_VER}
 LINUX_VER="at26"
 TCL_VER="8.4.12"
-TCL_SRC=${WORK_DIR}/tcl${TCL_VER}-src
+TCL_SRC=${WORK_DIR}/tcl${TCL_VER}
 
 # download source
 mkdir ${WORK_DIR}
