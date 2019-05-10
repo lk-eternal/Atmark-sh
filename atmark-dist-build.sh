@@ -18,9 +18,9 @@ if [ ! -d ${DIST_SRC} ]; then
 fi
 
 # install libs
-sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r) -y
+#sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r) -y
 sudo apt-get update
-sudo apt-get upgrade -y
+#sudo apt-get upgrade -y
 sudo apt-get install libasound2-dev:armhf -y
 sudo apt-get install libexpat1-dev:armhf -y
 sudo apt-get install libdaemon-dev:armhf -y
