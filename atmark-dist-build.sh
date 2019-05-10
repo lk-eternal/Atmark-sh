@@ -7,6 +7,7 @@ TCL_SRC=${WORK_DIR}/tcl${TCL_VER}
 
 # download source
 mkdir ${WORK_DIR}
+sudo chown -R $USER:$USER ${WORK_DIR}
 
 if [ ! -d ${DIST_SRC} ]; then
   cd ${WORK_DIR}
@@ -85,12 +86,12 @@ fi
 export PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
 
 # fix dist source code
-sudo sed -i "/#include <sys\/types.h>/a\#include <sys\/resource.h>" ${DIST_SRC}/user/udev/udev-105/udev-105/udevd.c
-sudo sed -i 's/$OPTINODES //'                                       ${DIST_SRC}/vendors/AtmarkTechno/Common/tools/genfs_ext2.sh
-sudo sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/grammar.y
-sudo sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
-sudo sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
-sudo sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
+sed -i "/#include <sys\/types.h>/a\#include <sys\/resource.h>" ${DIST_SRC}/user/udev/udev-105/udev-105/udevd.c
+sed -i 's/$OPTINODES //'                                       ${DIST_SRC}/vendors/AtmarkTechno/Common/tools/genfs_ext2.sh
+sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/grammar.y
+sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
+sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
+sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
 
 cd ${DIST_SRC}
 make menuconfig
@@ -98,4 +99,4 @@ make
 
 # download boot image
 cd ${DIST_SRC}/images
-wget https://users.atmark-techno.com/files/downloads/armadillo-840/image/loader-armadillo840-nor-v3.11.0.bin
+wget https://users.atmark-techno.com/files/downloads/armadillo-840/image/loader-armadillo840-mmcsd-v3.11.0.bin
