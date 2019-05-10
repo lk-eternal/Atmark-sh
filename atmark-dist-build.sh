@@ -51,7 +51,7 @@ sudo apt-get install genext2fs -y
 sudo rm /usr/bin/qmake
 sudo ln -s /usr/lib/arm-linux-gnueabihf/qt5/bin/qmake /usr/bin/qmake
 sudo cp -r /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabi-g++ /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabihf-g++
-sudo sed -i "s/arm-linux-gnueabi-/arm-linux-gnueabihf-/" /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabihf-g++/qmake.conf
+sudo sed -i "s/gnueabi/gnueabihf/" /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabihf-g++/qmake.conf
 
 # install tcl
 if [ ! -d ${TCL_SRC} ]; then
@@ -59,7 +59,7 @@ if [ ! -d ${TCL_SRC} ]; then
   wget --no-check-certificate https://master.dl.sourceforge.net/project/tcl/Tcl/${TCL_VER}/tcl${TCL_VER}-src.tar.gz
   tar xzf tcl${TCL_VER}-src.tar.gz
   cd ${TCL_SRC}/unix
-  sed -i "s/relid'/relid/" configure
+  sed -i "s/relid'/relid/g" configure
   ./configure --prefix=/usr/arm-linux-gnueabihf --disable-shared
   make CC=arm-linux-gnueabihf-gcc
   sudo make install
@@ -92,4 +92,3 @@ sudo sed -i "/^\techo 'static/d" ~/atmark-dist-20180330/user/gstreamer/gstreamer
 cd ${DIST_SRC}
 make menuconfig
 make
-
