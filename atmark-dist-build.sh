@@ -45,7 +45,7 @@ sudo apt-get install qml-module-qtquick2:armhf -y
 sudo apt-get install qml-module-qttest:armhf -y
 sudo apt-get install qml-module-qtquick-window2:armhf -y
 sudo apt-get install qml-module-qtmultimedia:armhf -y
-sudo apt-get install genext2fs
+sudo apt-get install genext2fs -y
 
 # fix qmake link
 sudo rm /usr/bin/qmake
