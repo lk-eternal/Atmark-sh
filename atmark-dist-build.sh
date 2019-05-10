@@ -47,6 +47,8 @@ sudo apt-get install qml-module-qtquick-window2:armhf -y
 sudo apt-get install qml-module-qtmultimedia:armhf -y
 sudo apt-get install genext2fs -y
 
+sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
+
 # fix qmake link
 sudo rm /usr/bin/qmake
 sudo ln -s /usr/lib/arm-linux-gnueabihf/qt5/bin/qmake /usr/bin/qmake
