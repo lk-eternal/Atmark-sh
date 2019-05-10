@@ -48,8 +48,6 @@ sudo apt-get install qml-module-qtquick-window2:armhf -y
 sudo apt-get install qml-module-qtmultimedia:armhf -y
 sudo apt-get install genext2fs -y
 
-sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
-
 # fix qmake link
 sudo rm /usr/bin/qmake
 sudo ln -s /usr/lib/arm-linux-gnueabihf/qt5/bin/qmake /usr/bin/qmake
@@ -92,6 +90,8 @@ sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/
 sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
 sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
 sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
+
+sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
 
 cd ${DIST_SRC}
 make menuconfig
