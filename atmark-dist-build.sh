@@ -92,3 +92,7 @@ sudo sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/
 cd ${DIST_SRC}
 make menuconfig
 make
+
+# download boot image
+cd ${DIST_SRC}/images
+wget https://users.atmark-techno.com/files/downloads/armadillo-840/image/loader-armadillo840-nor-v3.11.0.bin
