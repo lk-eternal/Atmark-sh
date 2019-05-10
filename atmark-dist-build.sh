@@ -90,7 +90,7 @@ sudo sed -i 's/$OPTINODES //'                                       ${DIST_SRC}/
 sudo sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/grammar.y
 sudo sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
 sudo sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
-sudo sed -i '/^CROSS_LIBDIR/s?/usr/$(CROSS_COMPILE:-=)/lib?/usr/lib/$(CROSS_COMPILE:-=)?' ${DIST_SRC}/user/qt5/Makefile
+sudo sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
 
 cd ${DIST_SRC}
 make menuconfig
