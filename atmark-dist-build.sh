@@ -79,8 +79,8 @@ GDB_PATH=${GDB_DIR}/gdbserver
 if [ ! -e ${GDB_PATH} ]; then
   sudo mkdir ${GDB_DIR}
   cd ${GDB_DIR}
-  wget --no-check-certificate https://download.atmark-techno.com/armadillo/cross-dev/debugger/gdbserver.gz
-  gunzip gdbserver.gz
+  sudo wget --no-check-certificate https://download.atmark-techno.com/armadillo/cross-dev/debugger/gdbserver.gz
+  sudo gunzip gdbserver.gz
 fi
 
 export PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
