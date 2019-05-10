@@ -83,11 +83,11 @@ fi
 export PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
 
 # fix dist source code
-sudo sed -i "s?#include <sys/types.h>?#include <sys/types.h>\n#include <sys/resource.h>?" ${DIST_SRC}/user/udev/udev-105/udev-105/udevd.c
-sudo sed -i 's/$OPTINODES //' ${DIST_SRC}/vendors/AtmarkTechno/Common/tools/genfs_ext2.sh
+sudo sed -i "/#include <sys\/types.h>/a\#include <sys\/resource.h>" ${DIST_SRC}/user/udev/udev-105/udev-105/udevd.c
+sudo sed -i 's/$OPTINODES //'                                       ${DIST_SRC}/vendors/AtmarkTechno/Common/tools/genfs_ext2.sh
 sudo sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/grammar.y
-sudo sed -i "s?#include <sys/mman.h>?#include <sys/mman.h>\n#include <sys/resource.h>?" ./user/busybox/busybox-1.20.2/include/libbb.h
-sudo sed -i "/^\techo 'static/d" ~/atmark-dist-20180330/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
+sudo sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
+sudo sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
 
 cd ${DIST_SRC}
 make menuconfig
