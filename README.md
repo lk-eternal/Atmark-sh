@@ -1,3 +1,6 @@
 # Atmark-sh
 
-wget https://github.com/arkceajin/Atmark-sh/archive/master.zip
+```
+wget https://raw.githubusercontent.com/arkceajin/Atmark-sh/master/atmark-dist-build.sh
+sudo bash atmark-dist-build.sh
+```
