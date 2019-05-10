@@ -6,7 +6,7 @@ TCL_VER="8.4.12"
 TCL_SRC=${WORK_DIR}/tcl${TCL_VER}
 
 # download source
-mkdir ${WORK_DIR}
+sudo mkdir ${WORK_DIR}
 sudo chown -R $USER:$USER ${WORK_DIR}
 
 if [ ! -d ${DIST_SRC} ]; then
