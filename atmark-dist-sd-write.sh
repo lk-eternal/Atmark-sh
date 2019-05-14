@@ -13,9 +13,6 @@ if [ -d sd ]; then
     rmdir sd
 fi
 
-# download loader
-wget https://download.atmark-techno.com/armadillo-840/image/loader-armadillo840-mmcsd-v${BOOT_VER}.bin
-
 mkdir sd
 sudo mount -t vfat ${SD_DEV}1 sd
 sudo cp loader-armadillo840-mmcsd-*.bin sd/sdboot.bin
