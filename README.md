@@ -12,7 +12,9 @@ How to use:
 wget https://raw.githubusercontent.com/arkceajin/Atmark-sh/master/atmark-dist-build.sh
 bash atmark-dist-build.sh
 ```
+find the device name of SD card using `cat /proc/partitions`, eg: `sdd`.
+
 ```
 cd [atmark-dist dir]/images
-bash atmark-dist-sd-write.sh
+bash atmark-dist-sd-write.sh sdd
 ```
