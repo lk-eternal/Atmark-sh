@@ -22,6 +22,7 @@ fi
 #sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r) -y
 sudo apt-get update
 #sudo apt-get upgrade -y
+sudo aptitude install gstreamer1.0-plugins-bad:armhf -y
 sudo apt-get install libasound2-dev:armhf -y
 sudo apt-get install libexpat1-dev:armhf -y
 sudo apt-get install libdaemon-dev:armhf -y
@@ -47,7 +48,6 @@ sudo apt-get install qml-module-qttest:armhf -y
 sudo apt-get install qml-module-qtquick-window2:armhf -y
 sudo apt-get install qml-module-qtmultimedia:armhf -y
 sudo apt-get install genext2fs -y
-sudo aptitude install gstreamer1.0-plugins-bad:armhf -y
 
 # fix qmake link
 sudo rm /usr/bin/qmake
