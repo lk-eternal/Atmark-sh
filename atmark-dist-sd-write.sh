@@ -20,14 +20,17 @@ rmdir sd
 echo "loader done."
 
 mkdir romfs
-sudo mount -o loop romfs*.img romfs
+sudo mount -o loop romfs.img romfs
 mkdir sd
 sudo mount -t ext3 ${SD_DEV}2 sd
 sudo cp -a romfs/* sd
+sudo rm sd/lib/libgcc_s.so.1
+sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* sd/lib
+sudo cp -a /lib/arm-linux-gnueabihf/*.so* sd/lib
 sudo umount romfs
 rmdir romfs
-sed -i "s/ram0/mmcblk0p2/" sd/etc/fstab
-sed -i "s/ext2/ext3/" sd/etc/fstab
+sudo sed -i "s/ram0/mmcblk0p2/" sd/etc/fstab
+sudo sed -i "s/ext2/ext3/" sd/etc/fstab
 sudo umount sd
 rmdir sd
 echo "romfs done."
@@ -35,7 +38,7 @@ echo "romfs done."
 mkdir sd
 sudo mount -t ext3 ${SD_DEV}2 sd
 sudo mkdir -p sd/boot
-sudo cp linux*.bin.gz sd/boot/Image.bin.gz
+sudo cp linux-a840*.bin.gz sd/boot/Image.bin.gz
 sleep 5
 sudo umount -f sd
 rmdir sd
