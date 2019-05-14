@@ -1,6 +1,7 @@
 # parameter eg: sdd
 # IMG_DIR="/opt/armadillo-work/atmark-dist-20180330/images"
 SD_DEV=/dev/$1
+BOOT_VER="3.11.0"
 
 if [ ! -e ${SD_DEV} ]; then
     echo "Error: can't found sd card device."
@@ -11,6 +12,9 @@ if [ -d sd ]; then
     sudo umount sd
     rmdir sd
 fi
+
+# download loader
+wget https://download.atmark-techno.com/armadillo-840/image/loader-armadillo840-mmcsd-v${BOOT_VER}.bin
 
 mkdir sd
 sudo mount -t vfat ${SD_DEV}1 sd
