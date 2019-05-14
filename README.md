@@ -13,6 +13,6 @@ wget https://raw.githubusercontent.com/arkceajin/Atmark-sh/master/atmark-dist-bu
 bash atmark-dist-build.sh
 ```
 ```
-cd [build dir]/images
+cd [atmark-dist dir]/images
 bash atmark-dist-sd-write.sh
 ```
