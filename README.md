@@ -20,5 +20,5 @@ find the device name of SD card using `cat /proc/partitions`, eg: `sdd`.
 cd [atmark-dist dir]/images
 bash atmark-dist-sd-write.sh sdd
 ```
-###Why I did this?
+### Why I did this?
 Because ATDE6 provide armhf gcc 4.9 and it support C++11!!!
