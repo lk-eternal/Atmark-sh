@@ -15,7 +15,7 @@ fi
 
 mkdir sd
 sudo mount -t vfat ${SD_DEV}1 sd
-sudo cp loader-armadillo840-mmcsd-*.bin sd/sdboot.bin
+sudo cp loader-armadillo840-mmcsd-v${BOOT_VER}.bin sd/sdboot.bin
 sudo umount sd
 rmdir sd
 echo "loader done."
@@ -39,7 +39,7 @@ echo "romfs done."
 mkdir sd
 sudo mount -t ext3 ${SD_DEV}2 sd
 sudo mkdir -p sd/boot
-sudo cp linux-a840*.bin.gz sd/boot/Image.bin.gz
+sudo cp linux.bin.gz sd/boot/Image.bin.gz
 sleep 5
 sudo umount -f sd
 rmdir sd
