@@ -100,11 +100,11 @@ cd ${DIST_SRC}
 make menuconfig
 make
 
-sudo rm -f ${DIST_SRC}/romfs/lib/libgcc_s.so.1
-sudo rm -f ${DIST_SRC}/romfs/usr/lib/*.so.*
-sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* ${DIST_SRC}/romfs/lib
-sudo cp -a /lib/arm-linux-gnueabihf/*.so*     ${DIST_SRC}/romfs/lib
-sudo cp -a ${OPENCV_DIR}/*.so*                ${DIST_SRC}/romfs/lib
+#sudo rm -f ${DIST_SRC}/romfs/lib/libgcc_s.so.1
+#sudo rm -f ${DIST_SRC}/romfs/usr/lib/*.so.*
+#sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* ${DIST_SRC}/romfs/lib
+#sudo cp -a /lib/arm-linux-gnueabihf/*.so*     ${DIST_SRC}/romfs/lib
+#sudo cp -a ${OPENCV_DIR}/*.so*                ${DIST_SRC}/romfs/lib
 
 # download boot image
 cd ${DIST_SRC}/images
