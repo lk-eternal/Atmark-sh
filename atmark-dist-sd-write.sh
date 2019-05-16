@@ -25,9 +25,9 @@ sudo mount -o loop romfs.img romfs
 mkdir sd
 sudo mount -t ext3 ${SD_DEV}2 sd
 sudo cp -a romfs/* sd
-sudo rm sd/lib/libgcc_s.so.1
-sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* sd/lib
-sudo cp -a /lib/arm-linux-gnueabihf/*.so* sd/lib
+#sudo rm sd/lib/libgcc_s.so.1
+#sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* sd/lib
+#sudo cp -a /lib/arm-linux-gnueabihf/*.so* sd/lib
 sudo umount romfs
 rmdir romfs
 sudo sed -i "s/ram0/mmcblk0p2/" sd/etc/fstab
