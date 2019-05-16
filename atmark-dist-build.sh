@@ -92,6 +92,7 @@ sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/
 sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
 sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
 sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
+sed -i '/ $(call do_depmod)/a\\trm -f $(ROMFSDIR)/lib/libgcc_s.so.1\n\trm -f $(ROMFSDIR)/usr/lib/*.so.*\n\tcp -a /usr/lib/arm-linux-gnueabihf/*.so* $(ROMFSDIR)/lib\n\tcp -a /lib/arm-linux-gnueabihf/*.so*     $(ROMFSDIR)/lib' ${DIST_SRC}/vendors/AtmarkTechno/Armadillo-840/Makefile
 
 sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
 
