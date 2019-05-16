@@ -54,7 +54,7 @@ sudo apt-get install genext2fs -y
 sudo rm /usr/bin/qmake
 sudo ln -s /usr/lib/arm-linux-gnueabihf/qt5/bin/qmake /usr/bin/qmake
 sudo cp -r /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabi-g++ /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabihf-g++
-sudo sed -i "s/gnueabi/gnueabihf/" /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabihf-g++/qmake.conf
+sudo sed -i "s/gnueabi-/gnueabihf-/" /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-arm-gnueabihf-g++/qmake.conf
 
 # install tcl
 if [ ! -d ${TCL_SRC} ]; then
