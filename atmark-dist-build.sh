@@ -4,6 +4,7 @@ DIST_SRC=${WORK_DIR}/atmark-dist-${DIST_VER}
 LINUX_VER="at26"
 TCL_VER="8.4.12"
 TCL_SRC=${WORK_DIR}/tcl${TCL_VER}
+OPENCV_DIR="/usr/opencv-*/lib"
 
 # download source
 sudo mkdir ${WORK_DIR}
@@ -97,6 +98,12 @@ sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/l
 cd ${DIST_SRC}
 make menuconfig
 make
+
+sudo rm -f ${DIST_SRC}/romfs/lib/libgcc_s.so.1
+sudo rm -f ${DIST_SRC}/romfs/usr/lib/*.so.*
+sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* ${DIST_SRC}/romfs/lib
+sudo cp -a /lib/arm-linux-gnueabihf/*.so*     ${DIST_SRC}/romfs/lib
+sudo cp -a ${OPENCV_DIR}/*.so*                ${DIST_SRC}/romfs/lib
 
 # download boot image
 cd ${DIST_SRC}/images
