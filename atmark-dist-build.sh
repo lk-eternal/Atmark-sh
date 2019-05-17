@@ -5,6 +5,7 @@ LINUX_VER="at26"
 TCL_VER="8.4.12"
 TCL_SRC=${WORK_DIR}/tcl${TCL_VER}
 OPENCV_DIR="/usr/opencv-*/lib"
+BEFORE_MAKE="atmark-dist-before-make.sh"
 
 # download source
 sudo mkdir ${WORK_DIR}
@@ -17,6 +18,13 @@ if [ ! -d ${DIST_SRC} ]; then
   tar zxf atmark-dist-${DIST_VER}.tar.gz
   tar zxf linux-3.4-${LINUX_VER}.tar.gz
   ln -s ../linux-3.4-${LINUX_VER} atmark-dist-${DIST_VER}/linux-3.x
+fi
+
+if [ ! -e ${BEFORE_MAKE}]; then
+  echo "Error: cannot find ${BEFORE_MAKE} in current directory."
+  exit
+else
+ cp -f ${BEFORE_MAKE} ${DIST_SRC}
 fi
 
 # install libs
@@ -92,19 +100,21 @@ sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/
 sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
 sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
 sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
-sed -i '/ $(call do_depmod)/a\\trm -f $(ROMFSDIR)/lib/libgcc_s.so.1\n\trm -f $(ROMFSDIR)/usr/lib/*.so.*\n\tcp -a /usr/lib/arm-linux-gnueabihf/*.so* $(ROMFSDIR)/lib\n\tcp -a /lib/arm-linux-gnueabihf/*.so*     $(ROMFSDIR)/lib' ${DIST_SRC}/vendors/AtmarkTechno/Armadillo-840/Makefile
+
+ARMADILLO840_MAKEFILE = ${DIST_SRC}/vendors/AtmarkTechno/Armadillo-840/Makefile
+BEFORE_MAKE_CMD = '$(ROOTDIR)/atmark-dist-before-make.sh $(ROMFSIMG)'
+BEFORE_MAKE_PROCESS = '/\t$(call do_depmod)/a\\tbash '
+if grep -q "${BEFORE_MAKE_CMD}" ${ARMADILLO840_MAKEFILE}; then
+  echo 'Before-make shell added into armadillo-840 makefile.'
+else
+  sed -i "${BEFORE_MAKE_PROCESS}${BEFORE_MAKE_CMD}" ${ARMADILLO840_MAKEFILE}
+fi
 
 sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
 
 cd ${DIST_SRC}
 make menuconfig
 make
-
-#sudo rm -f ${DIST_SRC}/romfs/lib/libgcc_s.so.1
-#sudo rm -f ${DIST_SRC}/romfs/usr/lib/*.so.*
-#sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* ${DIST_SRC}/romfs/lib
-#sudo cp -a /lib/arm-linux-gnueabihf/*.so*     ${DIST_SRC}/romfs/lib
-#sudo cp -a ${OPENCV_DIR}/*.so*                ${DIST_SRC}/romfs/lib
 
 # download boot image
 cd ${DIST_SRC}/images
