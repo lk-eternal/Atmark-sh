@@ -15,3 +15,4 @@ sed -i "s/gnueabi-/gnueabihf-/" qtbase/mkspecs/linux-arm-gnueabihf-g++/qmake.con
 
 make -j$(nproc)
 sudo make install
+sudo apt-get install qtcreator -y
