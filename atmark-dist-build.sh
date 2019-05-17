@@ -6,6 +6,7 @@ TCL_VER="8.4.12"
 TCL_SRC=${WORK_DIR}/tcl${TCL_VER}
 OPENCV_DIR="/usr/opencv-*/lib"
 BEFORE_MAKE="atmark-dist-before-make.sh"
+SD_WRITE="atmark-dist-sd-write.sh"
 
 # download source
 sudo mkdir ${WORK_DIR}
@@ -24,7 +25,14 @@ if [ ! -e ${BEFORE_MAKE}]; then
   echo "Error: cannot find ${BEFORE_MAKE} in current directory."
   exit
 else
- cp -f ${BEFORE_MAKE} ${DIST_SRC}
+   cp -f ${BEFORE_MAKE} ${DIST_SRC}
+fi
+
+if [ ! -e ${SD_WRITE}]; then
+  echo "Error: cannot find ${SD_WRITE} in current directory."
+  exit
+else
+   cp -f ${SD_WRITE} ${DIST_SRC}/images
 fi
 
 # install libs
