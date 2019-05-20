@@ -12,8 +12,9 @@ export QT_QPA_EGLFS_HEIGHT"
 
 sudo rm -f ${ROMFSDIR}/lib/libgcc_s.so.1
 sudo rm -f ${ROMFSDIR}/usr/lib/*.so.*
-sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* ${ROMFSDIR}/lib
-sudo cp -a /lib/arm-linux-gnueabihf/*.so*     ${ROMFSDIR}/lib
+sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so*             ${ROMFSDIR}/lib
+sudo cp -a /usr/lib/arm-linux-gnueabihf/pulseaudio/*.so*  ${ROMFSDIR}/lib
+sudo cp -a /lib/arm-linux-gnueabihf/*.so*                 ${ROMFSDIR}/lib
 
 if [ -d ${OPENCV_DIR} ]; then
   sudo cp -a ${OPENCV_DIR}/*.so*              ${ROMFSDIR}/lib
