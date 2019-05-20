@@ -1,5 +1,5 @@
 ROMFSDIR=$1
-QT_DIR="/opt/Qt/Qt5.3.2-arm/"
+QT_DIR="/opt/Qt/Qt5.3.2-arm"
 OPENCV_DIR="/usr/opencv-*/lib"
 MACHINE_ID=${ROMFSDIR}/etc/machine-id
 QT_QPA="QT_QPA_EGLFS_DISPLAY=1
