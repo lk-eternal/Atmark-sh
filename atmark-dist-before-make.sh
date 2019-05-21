@@ -18,9 +18,11 @@ sudo rm -f ${ROMFSDIR}/usr/lib/*.so.*
 sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so*             ${ROMFSDIR}/lib
 sudo cp -a /usr/lib/arm-linux-gnueabihf/pulseaudio/*.so*  ${ROMFSDIR}/lib
 sudo cp -a /lib/arm-linux-gnueabihf/*.so*                 ${ROMFSDIR}/lib
-sudo cp -a ${QT_DIR}/lib/*.so*                            ${ROMFSDIR}/lib
-sudo cp -rf ${QT_DIR}/plugins                             ${ROMFSDIR}/lib/qt5
-sudo cp -rf ${QT_DIR}/qml                                 ${ROMFSDIR}/lib/qt5
+if [ -d ${QT_DIR} ]; then
+  sudo cp -a ${QT_DIR}/lib/*.so*                          ${ROMFSDIR}/lib
+  sudo cp -rf ${QT_DIR}/plugins                           ${ROMFSDIR}/lib/qt5
+  sudo cp -rf ${QT_DIR}/qml                               ${ROMFSDIR}/lib/qt5
+fi
 
 if [ -d ${OPENCV_DIR} ]; then
   sudo cp -a ${OPENCV_DIR}/*.so*              ${ROMFSDIR}/lib
