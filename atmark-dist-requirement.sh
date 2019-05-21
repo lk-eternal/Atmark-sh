@@ -49,6 +49,17 @@ sudo apt-get install qml-module-qttest:armhf -y
 sudo apt-get install qml-module-qtquick-window2:armhf -y
 sudo apt-get install qml-module-qtmultimedia:armhf -y
 
+sudo apt-get install libqt5serialport5-dev:armhf -y
+sudo apt-get install libqt5dbus5:armhf -y
+sudo apt-get install libqt5declarative5:armhf -y
+sudo apt-get install libqt5opengl5-dev:armhf -y
+sudo apt-get install libqt5qml5:armhf -y
+sudo apt-get install libqt5quick5:armhf -y
+sudo apt-get install libqt5multimedia5:armhf -y                
+sudo apt-get install libqt5multimedia5-plugins:armhf -y
+sudo apt-get install libqt5multimediaquick-p5:armhf -y
+sudo apt-get install libqt5multimediawidgets5:armhf -y
+
 sudo apt-get install qtcreator -y
 #sudo apt-get install qtchooser:armhf -y
 sudo apt-get install genext2fs -y
