@@ -22,10 +22,25 @@ sudo apt-get install libjpeg-dev:armhf -y
 sudo apt-get install zlib1g-dev:armhf -y
 sudo apt-get install liblzo2-dev:armhf -y
 sudo apt-get install libssl-dev:armhf -y
+
 sudo apt-get install qt5-qmake:armhf -y
+sudo apt-get install qt5-image-formats-plugins:armhf -y
+sudo apt-get install qt5keychain-dev:armhf -y
+sudo apt-get install qtbase5-dev-tools:armhf -y
+sudo apt-get install qtconnectivity5-dev:armhf -y
 sudo apt-get install qt5-default:armhf -y
 sudo apt-get install qtbase5-private-dev:armhf -y
 sudo apt-get install qtdeclarative5-dev:armhf -y
+sudo apt-get install qtdeclarative5-dev-tools:armhf -y
+sudo apt-get install qtdeclarative5-private-dev:armhf -y
+sudo apt-get install qtmultimedia5-dev:armhf -y
+sudo apt-get install qtpositioning5-dev:armhf -y
+sudo apt-get install qtquick1-5-dev:armhf -y
+sudo apt-get install qtquick1-5-private-dev:armhf -y
+sudo apt-get install qtscript5-dev:armhf -y
+sudo apt-get install qtscript5-private-dev:armhf -y
+sudo apt-get install qttools5-dev:armhf -y
+sudo apt-get install qttools5-private-dev:armhf -y
 sudo apt-get install qttools5-dev:armhf -y
 sudo apt-get install qtxmlpatterns5-dev-tools:armhf -y
 sudo apt-get install qmlscene:armhf -y
@@ -33,5 +48,7 @@ sudo apt-get install qml-module-qtquick2:armhf -y
 sudo apt-get install qml-module-qttest:armhf -y
 sudo apt-get install qml-module-qtquick-window2:armhf -y
 sudo apt-get install qml-module-qtmultimedia:armhf -y
+
 sudo apt-get install qtcreator -y
+#sudo apt-get install qtchooser:armhf -y
 sudo apt-get install genext2fs -y
