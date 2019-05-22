@@ -1,7 +1,7 @@
 # install libs
 #sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r) -y
 #sudo apt-get upgrade -y
-sudo apt-get install software-properties-common
+sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:gstreamer-developers/pp
 sudo apt-get update
 sudo aptitude install gstreamer1.0-plugins-bad:armhf -y
