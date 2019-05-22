@@ -18,6 +18,8 @@ sudo rm -f ${ROMFSDIR}/usr/lib/*.so.*
 sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so*             ${ROMFSDIR}/lib
 sudo cp -a /usr/lib/arm-linux-gnueabihf/pulseaudio/*.so*  ${ROMFSDIR}/lib
 sudo cp -a /lib/arm-linux-gnueabihf/*.so*                 ${ROMFSDIR}/lib
+sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer0.10     ${ROMFSDIR}/lib
+sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-0.10    ${ROMFSDIR}/lib
 if [ -d ${QT_DIR} ]; then
   sudo cp -a ${QT_DIR}/lib/*.so*                          ${ROMFSDIR}/lib
   sudo cp -rf ${QT_DIR}/plugins                           ${ROMFSDIR}/lib/qt5
