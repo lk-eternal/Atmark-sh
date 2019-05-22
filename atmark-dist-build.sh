@@ -32,8 +32,6 @@ fi
 if [ ! -e ${NOW_DIR}/${SD_WRITE}]; then
   echo "Error: cannot find ${SD_WRITE} in current directory."
   exit
-else
-   cp -f ${NOW_DIR}/${SD_WRITE} ${DIST_SRC}/images
 fi
 
 # install libs
@@ -119,11 +117,13 @@ else
   sed -i "${BEFORE_MAKE_PROCESS}${BEFORE_MAKE_CMD}" ${ARMADILLO840_MAKEFILE}
 fi
 
-sudo cp -r /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
+sudo cp -rf /usr/lib/arm-linux-gnueabihf/gstreamer-1.0 /usr/arm-linux-gnueabihf/lib
 
 cd ${DIST_SRC}
 make menuconfig
 make
+
+cp -f ${NOW_DIR}/${SD_WRITE} ${DIST_SRC}/images
 
 # download boot image
 cd ${DIST_SRC}/images
