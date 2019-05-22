@@ -30,9 +30,9 @@ else
   echo 'Error: cannot find opencv libs.'
 fi
 
-sudo rm             ${MACHINE_ID}
-sudo touch          ${MACHINE_ID}
-sudo dbus-uuidgen > ${MACHINE_ID}
+sudo rm        ${MACHINE_ID}
+touch          ${MACHINE_ID}
+dbus-uuidgen > ${MACHINE_ID}
 
 if grep -q "QPA" ${ROMFSDIR}/etc/profile; then
     echo "QPA already added."
