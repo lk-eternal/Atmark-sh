@@ -34,9 +34,9 @@ sudo rm             ${MACHINE_ID}
 sudo touch          ${MACHINE_ID}
 sudo dbus-uuidgen > ${MACHINE_ID}
 
-if grep -q "QPA" /etc/profile; then
+if grep -q "QPA" ${ROMFSDIR}/etc/profile; then
     echo "QPA already added."
 else
-    sudo echo ${QT_QPA} >> /etc/profile
+    sudo echo ${QT_QPA} >> ${ROMFSDIR}/etc/profile
     echo "QPA add into profile."
 fi
