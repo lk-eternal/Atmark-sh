@@ -123,6 +123,7 @@ cd ${DIST_SRC}
 make menuconfig
 make
 
+# do this after images dir generated
 cp -f ${NOW_DIR}/${SD_WRITE} ${DIST_SRC}/images
 
 # download boot image
