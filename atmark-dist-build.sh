@@ -102,7 +102,7 @@ export PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig
 
 # fix dist source code
 sed -i "/#include <sys\/types.h>/a\#include <sys\/resource.h>" ${DIST_SRC}/user/udev/udev-105/udev-105/udevd.c
-sed -i '/OPTINODES=/a\OPTBLOCKS=106131\nOPTINODES=1894'        ${DIST_SRC}/vendors/AtmarkTechno/Common/tools/genfs_ext2.sh
+# sed -i '/OPTINODES=/a\OPTBLOCKS=106131\nOPTINODES=1894'        ${DIST_SRC}/vendors/AtmarkTechno/Common/tools/genfs_ext2.sh
 sed -i "/^int priv_gst_parse_yylex /s/ , yyscan_t yyscanner//" ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/grammar.y
 sed -i "/#include <sys\/mman.h>/a\#include <sys\/resource.h>"  ${DIST_SRC}/user/busybox/busybox-1.20.2/include/libbb.h
 sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/gstreamer/gstreamer1.0/gstreamer1.0-1.0.8/gst/parse/Makefile.am
