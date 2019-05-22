@@ -109,7 +109,7 @@ sed -i "/^\techo 'static/d"                                    ${DIST_SRC}/user/
 sed -i 's?/$(CROSS_COMPILE:-=)/lib?/lib/$(CROSS_COMPILE:-=)?'  ${DIST_SRC}/user/qt5/Makefile
 
 ARMADILLO840_MAKEFILE=${DIST_SRC}/vendors/AtmarkTechno/Armadillo-840/Makefile
-BEFORE_MAKE_CMD='bash $(ROOTDIR)/atmark-dist-before-make.sh $(ROMFSIMG)'
+BEFORE_MAKE_CMD='bash $(ROOTDIR)/atmark-dist-before-make.sh $(ROMFSDIR)'
 BEFORE_MAKE_PROCESS='/\t$(call do_depmod)/a\\t'
 if grep -q "${BEFORE_MAKE_CMD}" ${ARMADILLO840_MAKEFILE}; then
   echo 'Before-make shell added into armadillo-840 makefile.'
