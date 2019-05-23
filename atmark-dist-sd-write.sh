@@ -8,6 +8,11 @@ if [ ! -e ${SD_DEV} ]; then
     exit
 fi
 
+sudo umount ${SD_DEV}1
+sudo umount ${SD_DEV}2
+sudo mkfs.vfat -F 32 ${SD_DEV}1
+sudo mkfs.ext3 -L rootfs ${SD_DEV}2
+
 if [ -d sd ]; then
     sudo umount sd
     rmdir sd
@@ -24,7 +29,6 @@ mkdir romfs
 sudo mount -o loop romfs.img romfs
 mkdir sd
 sudo mount -t ext3 ${SD_DEV}2 sd
-sudo rm -rf sd/*
 sudo cp -a romfs/* sd
 #sudo rm sd/lib/libgcc_s.so.1
 #sudo cp -a /usr/lib/arm-linux-gnueabihf/*.so* sd/lib
