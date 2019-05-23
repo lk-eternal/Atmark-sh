@@ -123,9 +123,7 @@ cd ${DIST_SRC}
 make menuconfig
 make
 
-# do this after images dir generated
-cp -f ${NOW_DIR}/${SD_WRITE} ${DIST_SRC}/images
-
-# download boot image
+# download boot image & copy images write script
 cd ${DIST_SRC}/images
 wget https://users.atmark-techno.com/files/downloads/armadillo-840/image/loader-armadillo840-mmcsd-v3.11.0.bin
+cp ${NOW_DIR}/${SD_WRITE} ./
