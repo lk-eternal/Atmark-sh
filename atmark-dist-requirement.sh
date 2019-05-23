@@ -4,16 +4,16 @@
 #sudo apt-get install software-properties-common -y
 #sudo add-apt-repository ppa:gstreamer-developers/pp
 sudo apt-get update
-#sudo aptitude install gstreamer1.0-plugins-bad:armhf -y
-#sudo apt-get install gstreamer1.0-alsa:armhf -y
-#sudo apt-get install gstreamer1.0-libav:armhf -y
-#sudo apt-get install gstreamer1.0-plugins-good:armhf -y
-#sudo aptitude install gstreamer0.10-plugins-bad:armhf -y
-#sudo apt-get install gstreamer0.10-alsa:armhf -y
-#sudo apt-get install gstreamer0.10-libav:armhf -y
-#sudo apt-get install gstreamer0.10-plugins-good:armhf -y
-sudo apt-get install gstreamer*:armhf -y
-sudo apt-get install libgstreamer*:armhf -y
+sudo aptitude install gstreamer1.0-plugins-bad:armhf -y
+sudo apt-get install gstreamer1.0-alsa:armhf -y
+sudo apt-get install gstreamer1.0-libav:armhf -y
+sudo apt-get install gstreamer1.0-plugins-good:armhf -y
+sudo aptitude install gstreamer0.10-plugins-bad:armhf -y
+sudo apt-get install gstreamer0.10-alsa:armhf -y
+sudo apt-get install gstreamer0.10-libav:armhf -y
+sudo apt-get install gstreamer0.10-plugins-good:armhf -y
+#sudo apt-get install gstreamer*:armhf -y
+#sudo apt-get install libgstreamer*:armhf -y
 
 sudo apt-get install libasound2-dev:armhf -y
 sudo apt-get install libexpat1-dev:armhf -y
