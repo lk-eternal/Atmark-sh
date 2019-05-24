@@ -2,16 +2,6 @@ ROMFSDIR=$1
 QT_DIR="/opt/Qt/Qt5.3.2-arm"
 OPENCV_DIR="/usr/opencv-*/lib"
 MACHINE_ID=${ROMFSDIR}/etc/machine-id
-QT_QPA="QT_QPA_EGLFS_DISPLAY=1
-export QT_QPA_EGLFS_DISPLAY
-QT_QPA_PLATFORM=eglfs:fb=/dev/fb1
-export QT_QPA_PLATFORM
-QT_DEBUG_PLUGINS=1
-export QT_DEBUG_PLUGINS
-QT_QPA_EGLFS_WIDTH=800
-QT_QPA_EGLFS_HEIGHT=480
-export QT_QPA_EGLFS_WIDTH
-export QT_QPA_EGLFS_HEIGHT"
 
 sudo rm -f ${ROMFSDIR}/lib/libgcc_s.so.1
 sudo rm -f ${ROMFSDIR}/usr/lib/*.so.*
@@ -39,6 +29,11 @@ dbus-uuidgen > ${MACHINE_ID}
 if grep -q "QPA" ${ROMFSDIR}/etc/profile; then
     echo "QPA already added."
 else
-    sudo echo ${QT_QPA} >> ${ROMFSDIR}/etc/profile
+    PROFILE=${ROMFSDIR}/etc/profile
+    sudo echo "export QT_QPA_PLATFORM=eglfs" >> $PROFILE
+    sudo echo "export QT_QPA_EGLFS_DISPLAY=1" >> $PROFILE
+    sudo echo "export QT_QPA_EGLFS_WIDTH=800" >> $PROFILE
+    sudo echo "export QT_QPA_EGLFS_HEIGHT=480" >> $PROFILE
+    sudo echo "export QT_QPA_EGLFS_FB=/dev/fb1" >> $PROFILE
     echo "QPA add into profile."
 fi
