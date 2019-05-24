@@ -27,9 +27,9 @@ sudo apt-get install libjpeg-dev:armhf -y
 sudo apt-get install zlib1g-dev:armhf -y
 sudo apt-get install liblzo2-dev:armhf -y
 sudo apt-get install libssl-dev:armhf -y
-sudo apt-get install perl:armhf -y
+#sudo apt-get install perl:armhf -y
 sudo apt-get install libicu-dev:armhf -y
-sudo apt-get install libglfw3-dev:armhf libgles2-mesa-dev:armhf -y
+#sudo apt-get install libglfw3-dev:armhf libgles2-mesa-dev:armhf -y
 
 sudo apt-get install qt5-qmake:armhf -y
 sudo apt-get install qt5-image-formats-plugins:armhf -y
