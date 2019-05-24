@@ -33,9 +33,9 @@ sudo apt-get install libicu-dev:armhf -y
 
 sudo apt-get install qt5-qmake:armhf -y
 sudo apt-get install qt5-image-formats-plugins:armhf -y
-sudo apt-get install qt5keychain-dev:armhf -y
+#sudo apt-get install qt5keychain-dev:armhf -y
 sudo apt-get install qtbase5-dev-tools:armhf -y
-sudo apt-get install qtconnectivity5-dev:armhf -y
+#sudo apt-get install qtconnectivity5-dev:armhf -y
 sudo apt-get install qt5-default:armhf -y
 sudo apt-get install qtbase5-private-dev:armhf -y
 sudo apt-get install qtdeclarative5-dev:armhf -y
