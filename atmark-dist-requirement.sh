@@ -19,7 +19,7 @@ sudo apt-get install libasound2-dev:armhf -y
 sudo apt-get install libexpat1-dev:armhf -y
 sudo apt-get install libdaemon-dev:armhf -y
 sudo apt-get install bison -y
-#sudo apt-get install flex -y
+sudo apt-get install flex -y
 #sudo apt-get install gperf -y
 sudo apt-get install pkg-config -y
 sudo apt-get install libglib2.0-dev:armhf -y
