@@ -8,7 +8,7 @@ sudo aptitude install gstreamer1.0-plugins-bad:armhf -y
 sudo apt-get install gstreamer1.0-alsa:armhf -y
 sudo apt-get install gstreamer1.0-libav:armhf -y
 sudo apt-get install gstreamer1.0-plugins-good:armhf -y
-sudo aptitude install gstreamer0.10-plugins-bad:armhf -y
+#sudo aptitude install gstreamer0.10-plugins-bad:armhf -y
 sudo apt-get install gstreamer0.10-alsa:armhf -y
 sudo apt-get install gstreamer0.10-libav:armhf -y
 sudo apt-get install gstreamer0.10-plugins-good:armhf -y
