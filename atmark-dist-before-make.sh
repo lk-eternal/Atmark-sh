@@ -16,7 +16,7 @@ if [ -d ${QT_DIR} ]; then
   #sudo cp -rf ${QT_DIR}/plugins      ${ROMFSDIR}/lib/qt5
   #sudo cp -rf ${QT_DIR}/qml          ${ROMFSDIR}/lib/qt5
   sudo mkdir ${ROMFSDIR}/opt/Qt
-  sudo cp -rf ${QT_DIR}/qml           ${ROMFSDIR}/opt/Qt
+  sudo cp -rf ${QT_DIR}               ${ROMFSDIR}/opt/Qt
 fi
 
 if [ -d ${OPENCV_DIR} ]; then
