@@ -33,4 +33,12 @@ sudo dpkg --force-depends -i crossbuild-essential-armhf*
 sudo apt-get install libncurses5-dev -y
 sudo apt-get install libncursesw5-dev -y
 sudo apt-get install cpio -y
+
 sudo touch /etc/mtab
+touch ~/.bashrc
+if grep -q "LIBGL_ALWAYS_INDIRECT" ~/.bashrc; then
+  echo 'LIBGL_ALWAYS_INDIRECT added'
+else
+  echo 'export DISPLAY=:0.0' >> ~/.bashrc
+  echo 'export LIBGL_ALWAYS_INDIRECT=1' >> ~/.bashrc
+fi
