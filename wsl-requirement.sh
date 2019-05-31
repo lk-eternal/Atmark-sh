@@ -42,3 +42,7 @@ else
   echo 'export DISPLAY=:0.0' >> ~/.bashrc
   echo 'export LIBGL_ALWAYS_INDIRECT=1' >> ~/.bashrc
 fi
+
+sudo apt-get install xfce4-terminal -y
+sudo apt-get install xfce4 -y
+sudo apt-get upgrade gtk2-engines-pixbuf -y
