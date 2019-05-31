@@ -9,8 +9,8 @@ curl http://emdebian.org/tools/debian/emdebian-toolchain-archive.key | sudo apt-
 sudo dpkg --add-architecture armhf
 sudo apt-get update
 
-sudo apt-get install libc6-dev:armhf
-sudo apt-get install libgcc-4.9-dev:armhf
+sudo apt-get install libc6-dev:armhf -y
+sudo apt-get install libgcc-4.9-dev:armhf -y
 sudo apt-get install dpkg-cross -y
 apt-get download binutils-arm-linux-gnueabihf
 apt-get download cpp-4.9-arm-linux-gnueabihf
@@ -29,6 +29,7 @@ sudo dpkg --force-depends -i gcc-arm-linux-gnueabihf* &&
 sudo dpkg --force-depends -i g++-arm-linux-gnueabihf* &&
 sudo dpkg --force-depends -i crossbuild-essential-armhf*
 
-sudo apt-get install libncurses5-dev libncursesw5-dev
+sudo apt-get install libncurses5-dev -y
+sudo apt-get install libncursesw5-dev -y
 sudo apt-get install cpio -y
 sudo touch /etc/mtab
