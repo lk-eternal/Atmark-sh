@@ -12,21 +12,22 @@ sudo apt-get update
 sudo apt-get install libc6-dev:armhf -y
 sudo apt-get install libgcc-4.9-dev:armhf -y
 sudo apt-get install dpkg-cross -y
+
+apt-get download libgcc-4.9-dev:armhf
 apt-get download binutils-arm-linux-gnueabihf
 apt-get download cpp-4.9-arm-linux-gnueabihf
 apt-get download gcc-4.9-arm-linux-gnueabihf
 apt-get download g++-4.9-arm-linux-gnueabihf
 apt-get download gcc-arm-linux-gnueabihf
 apt-get download g++-arm-linux-gnueabihf
-apt-get download libgcc-4.9-dev:armhf
 apt-get download crossbuild-essential-armhf
 sudo dpkg --force-depends -i libgcc-4.9-dev_4.9.2-10+deb8u2_armhf.deb
 sudo dpkg --force-depends -i binutils-arm-linux-gnueabihf*
 sudo dpkg --force-depends -i cpp-4.9-arm-linux-gnueabihf*
-sudo dpkg --force-depends -i gcc-4.9-arm-linux-gnueabihf* &&
-sudo dpkg --force-depends -i g++-4.9-arm-linux-gnueabihf* &&
-sudo dpkg --force-depends -i gcc-arm-linux-gnueabihf* &&
-sudo dpkg --force-depends -i g++-arm-linux-gnueabihf* &&
+sudo dpkg --force-depends -i gcc-4.9-arm-linux-gnueabihf*
+sudo dpkg --force-depends -i g++-4.9-arm-linux-gnueabihf*
+sudo dpkg --force-depends -i gcc-arm-linux-gnueabihf*
+sudo dpkg --force-depends -i g++-arm-linux-gnueabihf*
 sudo dpkg --force-depends -i crossbuild-essential-armhf*
 
 sudo apt-get install libncurses5-dev -y
