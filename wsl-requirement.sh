@@ -30,8 +30,8 @@ sudo dpkg --force-depends -i gcc-arm-linux-gnueabihf*
 sudo dpkg --force-depends -i g++-arm-linux-gnueabihf*
 sudo dpkg --force-depends -i crossbuild-essential-armhf*
 
-sed -i 's/libstdc++-4.9-dev:armhf (= 4.9.2-10)/libstdc++-4.9-dev:armhf (>= 4.9.2-10)/g' /var/lib/dpkg/status
-sed -i 's/libgcc-4.9-dev:armhf (= 4.9.2-10)/libgcc-4.9-dev:armhf (>= 4.9.2-10)/g'       /var/lib/dpkg/status
+sudo sed -i 's/libstdc++-4.9-dev:armhf (= 4.9.2-10)/libstdc++-4.9-dev:armhf (>= 4.9.2-10)/g' /var/lib/dpkg/status
+sudo sed -i 's/libgcc-4.9-dev:armhf (= 4.9.2-10)/libgcc-4.9-dev:armhf (>= 4.9.2-10)/g'       /var/lib/dpkg/status
 
 sudo apt-get install libstdc++-4.9-dev:armhf -y
 sudo apt-get install libncurses5-dev -y
